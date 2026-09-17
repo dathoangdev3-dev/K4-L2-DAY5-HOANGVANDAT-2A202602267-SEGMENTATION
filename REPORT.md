@@ -19,7 +19,7 @@
 | cp6_coverage | cp6_coverage.zip | 1 / 1 | 3 |
 | **Tổng tối đa** | | | **100** |
 
-Đã chạy scorer ba tier trên máy sau khi nhận ground truth: easy_semantic 16.9/20, medium_instance 16.3/32, hard_panoptic 13.8/30, tổng **47.0/82**. Checkpoint không có ground truth trong repo học viên nên chưa tính được điểm tự động — chờ coach chấm. Không tự điền điểm bonus.
+Đã chạy scorer ba tier trên máy sau khi nhận ground truth: easy_semantic 16.9/20, medium_instance 16.3/32, hard_panoptic 13.8/30, tổng **47.0/82**. Checkpoint không có ground truth trong repo học viên nên chưa tính được điểm tự động — chờ coach chấm. Không tự điền điểm; người phụ trách xác nhận theo tiêu chí lớp.
 
 ## 2. Một quyết định trước khi dùng gợi ý
 
@@ -34,7 +34,7 @@
 - Bằng chứng tôi nhìn thấy: Sau khi chạy scorer lần đầu, submitted=82 nhưng GT=71 (thừa +11, FP=27). Phóng to ảnh `000000373353` trong CVAT thấy hai mask `car` sát nhau thực ra là hai phần nhìn thấy của cùng một xe bị cột điện che giữa — tôi đã vẽ thành hai instance riêng thay vì một.
 - Quy tắc và hành động sửa: Theo quy tắc instance, một vật bị che thành hai mảng nhìn thấy rời nhau vẫn là **một instance**. Tôi xác định từng cặp mask `car` thuộc cùng một xe rồi xóa mask thừa. Ảnh `000000373353` đưa `car` từ 20 → 13 khớp đúng GT.
 - Sau sửa đã Save và export lại chưa? Đã Save và export lại thành `medium_instance.zip`.
-- Kết quả sau sửa: `medium_instance` metric tăng từ 0.602 → 0.629, điểm từ 14.4 → **16.3/32**. FP giảm từ 27 → 16, Recall tăng từ 0.775 → 0.820. Kết quả ba tier tổng **47.0/82**, không tự điền PASS hay bonus.
+- Kết quả sau sửa: `medium_instance` metric tăng từ 0.602 → 0.629, điểm từ 14.4 → **16.3/32**. FP giảm từ 27 → 16, Recall tăng từ 0.775 → 0.820. Kết quả ba tier tổng **47.0/82**; người phụ trách xác nhận điểm cuối theo tiêu chí lớp.
 
 ## 4. Ba ca chưa chắc hoặc đã cân nhắc
 
